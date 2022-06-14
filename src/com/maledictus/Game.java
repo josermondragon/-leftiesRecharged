@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
+import org.json.simple.parser.*;
 
 public class Game {
 
@@ -51,40 +52,89 @@ public class Game {
                 "within...\n");
     }
 
-    public void getDirection() {
+    public void getDirection() throws IOException, ParseException, java.text.ParseException {
+
+        //this will be the json read method
+        //refactor this so that a method will return the room values to avoid redundancy
+
+
+
+//        Object obj = new JSONParser().parse(new FileReader("JSONExample.json"));
+//        JSONObject jo = (JSONObject) obj;
+//
+//
+//        String room0 = (String) jo.get("room0");
+//        String room0Description = (String) jo.get("room0Description");
+//
+//        String room1 = (String) jo.get("room1");
+//        String room1Description = (String) jo.get("room1Description");
+//
+//        String room2 = (String) jo.get("room2");
+//        String room2Description = (String) jo.get("room2Description");
+//
+//        String room3 = (String) jo.get("room3");
+//        String room3Description = (String) jo.get("room3Description");
+//
+//        String room4 = (String) jo.get("room4");
+//        String room4Description = (String) jo.get("room4Description");
+//
+//        String room5 = (String) jo.get("room5");
+//        String room5Description = (String) jo.get("room5Description");
+//
+//        String room6 = (String) jo.get("room6");
+//        String room6Description = (String) jo.get("room6Description");
+//
+//        String room7 = (String) jo.get("room7");
+//        String room7Description = (String) jo.get("room7Description");
+//
+//        String room8 = (String) jo.get("room8");
+//        String room8Description = (String) jo.get("room8Description");
+//
+//        String room9 = (String) jo.get("room9");
+//        String room9Description = (String) jo.get("room9Description");
+//
+//        String room10 = (String) jo.get("room10");
+//        String room10Description = (String) jo.get("room10Description");
+//
+//        String room11 = (String) jo.get("room11");
+//        String room11Description = (String) jo.get("room11Description");
+//
+//        String room12 = (String) jo.get("room12");
+//        String room12Description = (String) jo.get("room12Description");
+
+
+
 
         ArrayList<Room> map = new ArrayList<>();
+        Json reader = new Json();
 
-        map.add(new Room("Great Hall", "The main area of the castle.", 3, 0, 0, 1));
+
+        map.add(new Room(reader.returnRoomName("0"), reader.returnRoomDescription("0"), 3, 0, 0, 1));
         //0
 
-        map.add(new Room("Dining room", "A long, rectangular dining table set with the finest silver cutlery and porcelain tableware fills the room.  A fireplace is built into the east wall behind \n" +
-                "the head of the table.  A large, crystal chandelier hangs perfectly centered in the room.\n", 2, 1, 0, 1));
+        map.add(new Room(reader.returnRoomName("1"), reader.returnRoomDescription("1"), 2, 1, 0, 1));
         //1
-        map.add(new Room("Kitchen", "Bundles of herbs hang from the ceiling.  A large stone oven is built into the north wall. The mixed aroma of burnt wood and fresh \n" +
-                "herbs linger.", 2, 1, 2, 2));
+        map.add(new Room(reader.returnRoomName("2"),  reader.returnRoomDescription("2"), 2, 1, 2, 2));
         //2
-        map.add(new Room("Courtyard", "The smell of fresh flowers fills the air and the sound of flowing water can be heard.  Four large oak trees sit in each corner surrounded by garden flowers.  \n" +
-                "A hedge-lined path leads to the center of the courtyard where a large water fountain sits.\n", 4, 0, 3, 3));
+        map.add(new Room(reader.returnRoomName("3"), reader.returnRoomDescription("3"), 4, 0, 3, 3));
         //3
-        map.add(new Room("Ball room", "Crystal chandeliers spiral down from the arched sky-blue ceiling illuminating the luxurious golden walls and a floor\n" +
-                "so polished it looks like an iced-over lake.\n", 4, 3, 4, 4));
+        map.add(new Room(reader.returnRoomName("4"), reader.returnRoomDescription("4"), 4, 3, 4, 4));
         //4
-        map.add(new Room("Great Hall hallway", "A long and narrow hallway, with a floor of solid white marble.  Numerous antique paintings hang on the wall.\n", 6, 5, 7, 0));
+        map.add(new Room(reader.returnRoomName("5"), reader.returnRoomDescription("5"), 6, 5, 7, 0));
         //5
-        map.add(new Room("Guard room", "A place where arms and military equipment are stored. You see a ghostly soldier sitting in a wooden chair.", 6, 5, 6, 6));
+        map.add(new Room(reader.returnRoomName("6"), reader.returnRoomDescription("6"), 6, 5, 6, 6));
         //6
-        map.add(new Room("Library", "You see book shelves throughout the room, and at the center of it all, you see a ghostly librarian sitting on the floor with a sea of books scattered around him. He seems to be reading something.\n", 9, 8, 7, 5));
+        map.add(new Room(reader.returnRoomName("7"), reader.returnRoomDescription("7"), 9, 8, 7, 5));
         //7
-        map.add(new Room("Secret room", "Description for the secret room\n", 7, 8, 8, 8));
+        map.add(new Room(reader.returnRoomName("8"), reader.returnRoomDescription("8"), 7, 8, 8, 8));
         //8
-        map.add(new Room("Foyer", "A large, vacant room dimly lit by a few torches lining the stone walls.  You feel an immediate drop in temperature as a freezing chill crawls up your back. You get the sense that this may be your last chance to turn back from what lies ahead...\n", 9, 9, 7, 10));
+        map.add(new Room(reader.returnRoomName("9"), reader.returnRoomDescription("9"), 9, 9, 7, 10));
         //9
-        map.add(new Room("Dungeon", "A dark, damp room filled with multiple iron bared cells for holding prisoners. The foundation resembles more of a cavernous system than a stone wall. The smell of death is pungent and overwhelming.  \n", 11, 10, 9, 12));
+        map.add(new Room(reader.returnRoomName("10"), reader.returnRoomDescription("10"), 11, 10, 9, 12));
         //10
-        map.add(new Room("Cellar", "You see rows of Wineracks as far as the eye can see. A large layer of dust sits atop the exposed wine bottles. You hear a bottle smash in the distance. You are not alone in here...\n", 11, 10, 11, 11));
+        map.add(new Room(reader.returnRoomName("11"), reader.returnRoomDescription("11"), 11, 10, 11, 11));
         //11
-        map.add(new Room("Crypt", "This is the description placeholder for crypt\n", 12, 12, 10, 12));
+        map.add(new Room(reader.returnRoomName("12"), reader.returnRoomDescription("12"), 12, 12, 10, 12));
         //12
 
 
