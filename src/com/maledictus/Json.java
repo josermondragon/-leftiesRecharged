@@ -88,8 +88,8 @@ public class Json {
         data.put("text3", "Select [1] to start game.");
         data.put("text4", "Select [2] to quit game.");
 
-        //room direction maps///
-
+        //room direction maps//
+//        these can be refactored into different functions
         Map<String, String> greatHall = new HashMap<>();
         greatHall.put("north", "Courtyard");
         greatHall.put("east", "Dining room");
