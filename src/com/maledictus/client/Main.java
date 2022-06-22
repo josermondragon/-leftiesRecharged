@@ -1,4 +1,4 @@
-package com.maledictus;
+package com.maledictus.client;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.maledictus.Game;
 
 public class Main {
 
