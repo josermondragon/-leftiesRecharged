@@ -1,5 +1,6 @@
 package com.maledictus.item.weapon;
 
+import com.maledictus.Printer;
 import com.maledictus.item.Item;
 import com.maledictus.item.ItemType;
 
@@ -13,6 +14,6 @@ public class Weapon extends Item {
     }
 
     public void use() {
-        System.out.println("You used your weapon");
+        Printer.print("You used your weapon");
     }
 }

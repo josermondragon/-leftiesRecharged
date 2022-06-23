@@ -1,5 +1,6 @@
 package com.maledictus.item.key;
 
+import com.maledictus.Printer;
 import com.maledictus.item.Item;
 import com.maledictus.item.ItemType;
 
@@ -17,6 +18,6 @@ public class Key extends Item {
     }
 
     public void use() {
-        System.out.println("You used your Key!");
+        Printer.print("You used your Key!");
     }
 }
