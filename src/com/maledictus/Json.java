@@ -239,7 +239,7 @@ public class Json {
         Object obj = new JSONParser().parse(new FileReader("GameData.json"));
         JSONObject jo = (JSONObject) obj;
         String npcName;
-        npcName = (String) jo.get("item" + npcNumber);
+        npcName = (String) jo.get("npc" + npcNumber);
         return npcName;
     }
 
