@@ -15,7 +15,6 @@ public class Battle {
     private final NPC npc;
     private boolean combat = true;
 
-
      public Battle(Player player, NPC npc) {
         this.player = player;
         this.npc = npc;
