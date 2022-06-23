@@ -1,5 +1,6 @@
 package com.maledictus.player;
 
+import com.maledictus.Printer;
 import com.maledictus.item.Item;
 import com.maledictus.item.ItemType;
 import com.maledictus.item.key.Key;
@@ -43,13 +44,13 @@ public class Player {
 
     public int attack(NPC npc) {
         if(equipped) {
-            System.out.println("NPC hit points is " + npc.getHitPoints());
+            Printer.print("NPC hit points is " + npc.getHitPoints());
             npc.setHitPoints(npc.getHitPoints() - 50);
-            System.out.println("NPC hit points is " + npc.getHitPoints());
+            Printer.print("NPC hit points is " + npc.getHitPoints());
         } else {
-            System.out.println("NPC hit points is " + npc.getHitPoints());
+            Printer.print("NPC hit points is " + npc.getHitPoints());
             npc.setHitPoints(npc.getHitPoints() - 30);
-            System.out.println("NPC hit points is " + npc.getHitPoints());
+            Printer.print("NPC hit points is " + npc.getHitPoints());
         } return npc.getHitPoints();
     }
 
