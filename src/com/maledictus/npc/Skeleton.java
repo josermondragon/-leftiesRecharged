@@ -1,5 +1,6 @@
 package com.maledictus.npc;
 
+import com.maledictus.Printer;
 import com.maledictus.npc.enemy.Enemy;
 import com.maledictus.npc.enemy.EnemyType;
 import com.maledictus.player.Player;
@@ -19,9 +20,9 @@ public class Skeleton extends NPC {
 
     @Override
     public int attack(Player player) {
-        System.out.println("Player hit points is " + player.getHitPoints());
+        Printer.print("Player hit points is " + player.getHitPoints());
         player.setHitPoints(player.getHitPoints() - 8);
-        System.out.println("Player hit points is " + player.getHitPoints());
+        Printer.print("Player hit points is " + player.getHitPoints());
         return player.getHitPoints();
     }
 

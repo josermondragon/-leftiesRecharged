@@ -15,7 +15,7 @@ public class Input {
     public static String scannerUserInput() {
         Scanner scanner;
         String line = "If you see this.. you FAILED!";
-        System.out.print(">>>");
+        Printer.print(">>>");
         scanner = new Scanner( System.in);
         line = scanner.nextLine();
         return line;

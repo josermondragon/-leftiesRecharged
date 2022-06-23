@@ -1,5 +1,6 @@
 package com.maledictus.item.potion;
 
+import com.maledictus.Printer;
 import com.maledictus.item.*;
 import com.maledictus.player.Player;
 
@@ -18,6 +19,6 @@ public class Potion extends Item {
             player.heal(10);
         }
         player.removeItem(potion);
-        System.out.println("You used your Potion!");
+        Printer.print("You used your Potion!");
     }
 }
