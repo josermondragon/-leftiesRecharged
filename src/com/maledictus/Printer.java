@@ -1,7 +1,7 @@
 package com.maledictus;
 
 public class Printer {
-    private void print(String string) {
+    public static void print(Object string) {
         System.out.println(string);
     }
 }

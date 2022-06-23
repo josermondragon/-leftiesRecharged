@@ -34,15 +34,15 @@ public class Battle {
             npc.attack(player);
         } else if (userCommand.equalsIgnoreCase("run")) {
             this.player.setHitPoints(0);
-            System.out.println("You attempt to run away.....");
+            Printer.print("You attempt to run away.....");
         } else if (userCommand.equalsIgnoreCase("equip")) {
-            System.out.println("CURRENT ITEMS");
-            System.out.println("-------------");
+            Printer.print("CURRENT ITEMS");
+            Printer.print("-------------");
             for (Map.Entry<String, Item> item : player.getInventory().entrySet()) {
-                System.out.println(item.getKey());
+                Printer.print(item.getKey());
             }
             String itemSelect = scannerUserInput();
-            System.out.println("You equipped " + itemSelect);
+            Printer.print("You equipped " + itemSelect);
             player.equipWeapon();
         }
     }

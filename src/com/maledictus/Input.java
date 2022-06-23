@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+// NOTE: THIS CLASS CAN WORK WITH GUI TO GET PLAYER INFORMATION
 public class Input {
 
     // For taking in scanner input (txt/or user)
