@@ -11,7 +11,6 @@ public class ItemFactory {
     private static final Map<Integer, Item> itemMap = new TreeMap<>();
 
     ItemFactory () {
-
     }
 
     public static Weapon createItem(String name, String description, ItemType itemType, WeaponType weaponType) {
