@@ -10,6 +10,7 @@ public class Printer {
     public static void print(Object string) {
         String obj = string.toString();
         gui.buttonAddText(obj);
+//        gui.MainFrame();
         System.out.println(string);
     }
 
