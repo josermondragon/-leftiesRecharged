@@ -9,7 +9,7 @@ public class BattleMusic {
     private FloatControl gainControl;
 
     public BattleMusic() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        File audioFile = new File("resources/data/battle-music.wav");
+        File audioFile = new File("-leftiesRecharged/resources/data/battle-music.wav");
 
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
 

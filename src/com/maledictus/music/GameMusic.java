@@ -9,7 +9,7 @@ public class GameMusic {
     private FloatControl gainControl;
 
     public GameMusic() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        File audioFile = new File("resources/data/lavender-town-music.wav");
+        File audioFile = new File("-leftiesRecharged/resources/data/lavender-town-music.wav");
 
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
 
