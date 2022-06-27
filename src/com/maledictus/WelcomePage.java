@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class WelcomePage extends JFrame {
 
@@ -26,7 +27,14 @@ public class WelcomePage extends JFrame {
             panel.setBounds(0, 0, 700, 500);
             JButton close = new JButton("Close");
             panel.add(close);
-            BufferedImage img = ImageIO.read(new File(IMG_PATH));
+
+            Class<? extends WelcomePage> aClass = WelcomePage.class;
+            System.out.println(aClass);
+            URL resource = aClass.getClassLoader().getResource("data/imageIntro.jpeg");
+            System.out.println(resource);
+            BufferedImage img = ImageIO.read(resource);
+
+//            BufferedImage img = ImageIO.read(new File(IMG_PATH));
             JLabel label = new JLabel(new ImageIcon(img));
             panel.add(label);
             panel.setBackground(new Color(0, 0, 0));
