@@ -10,18 +10,14 @@ public class GameMusic {
 
     public GameMusic() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         File audioFile = new File("resources/data/lavender-town-music.wav");
-
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
-
         AudioFormat format = audioStream.getFormat();
         DataLine.Info info = new DataLine.Info(Clip.class, format);
         audioClip = (Clip) AudioSystem.getLine(info);
         audioClip.open(audioStream);
         gainControl = (FloatControl) audioClip.getControl(FloatControl.Type.MASTER_GAIN);
-        gainControl.setValue(-5.0f);
+        gainControl.setValue(-8.0f);
     }
-
-
 
     public void playMusic() {
         audioClip.start();
@@ -36,19 +32,16 @@ public class GameMusic {
     }
 
     public void setMusicMidRange(){
-        gainControl.setValue(-10.0f);
+        gainControl.setValue(-13.0f);
     }
 
     public void setMusicMidHigh(){
-        gainControl.setValue(-1.0f);
+        gainControl.setValue(-2.0f);
     }
 
     public void setMusicHigh(){
         gainControl.setValue(5.0f);
     }
-
-
-
 
     public void stopMusic() {
         audioClip.stop();

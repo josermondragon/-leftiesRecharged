@@ -367,7 +367,7 @@ public class Game {
 
         while (waitingOnInput) {
 
-            Printer.print("Press [1] to start a new game.\nPress [2] to quit.\nPress [3] for game info.\nPress [4] to stop Music.\nPress [5] to play Music.\nPress [6] to display game maps.\nPress [7] to resume game.");
+            Printer.print("Press [1] to start a new game.\nPress [2] to quit.\nPress [3] for game info.\nPress [4] to stop Music.\nPress [5] to play Music.\nPress [6] to display game maps.\nPress [7] to resume game.\n8 to change game volume");
             String optionInput = scannerUserInput();
 
             switch (optionInput) {
@@ -384,7 +384,7 @@ public class Game {
                     System.exit(1);
                     break;
                 case "3":
-                    Printer.print("Maledictus is a console text-adventure game. You are a treasure hunter is seek of riches.  Your goal is to traverse the map, discover what lies within, and make it out alive!\nGame created by team Lefties: Ryan Mosser, Michael Herman, and Nikko Colby\n");
+                    Printer.print("Maledictus is a console text-adventure game. You are a treasure hunter is seek of riches.  Your goal is to traverse the map, discover what lies within, and make it out alive!\nGame created by team Lefties: Ryan Mosser, Michael Herman, and Nikko Colby\n which was then taken into further production by Marcos Cardoso, Jose Mondragon and Samekh Resh");
                     break;
                 case "4":
                     gameMusic.stopMusic();
@@ -398,10 +398,31 @@ public class Game {
                 case "7":
                     waitingOnInput = false;
                     break;
+                case "8":
+                    changeVolume();
                 default:
                     errorMsg = ANSI_RED + "Invalid Selection. Please try again." + ANSI_RESET;
                     break;
             }
+        }
+    }
+
+    private void changeVolume() {
+        Printer.print("1 for low\n2 for med low\n3 for medium\n4 for med-high\n5 for high");
+        String choice = scannerUserInput();
+        if (choice.equals("1")){
+            gameMusic.setMusicLow();
+        }else if (choice.equals("2")){
+            gameMusic.setMusicMidLow();
+        }else if (choice.equals("3")){
+            gameMusic.setMusicMidRange();
+        }else if (choice.equals("4")){
+            gameMusic.setMusicMidHigh();
+        }else if (choice.equals("5")){
+            gameMusic.setMusicHigh();
+        }else {
+            Printer.print(ANSI_RED + "INVALID ENTRY: must use the letters 1 through 5 for volume manipulation");
+            changeVolume();
         }
     }
 
