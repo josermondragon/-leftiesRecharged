@@ -55,7 +55,9 @@ public class Game {
         Json.createRoomList();
         currentRoom = roomMap.get("Great Hall");
         gameMusic.playMusic();
+
         start();
+
     }
 
     public void createCharacter() {
@@ -119,6 +121,7 @@ public class Game {
     }
 
     private void start() throws IOException, org.json.simple.parser.ParseException, java.text.ParseException, UnsupportedAudioFileException, LineUnavailableException {
+
         boolean round = true;
         if (playerOne.getHitPoints() == 0) {
             round = false;

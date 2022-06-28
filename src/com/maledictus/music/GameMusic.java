@@ -1,15 +1,22 @@
 package com.maledictus.music;
 
+import com.maledictus.WelcomePage;
+
 import javax.sound.sampled.*;
+import javax.swing.*;
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class GameMusic {
-    private Clip audioClip;
+    private static Clip audioClip;
     private FloatControl gainControl;
 
     public GameMusic() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        File audioFile = new File("-leftiesRecharged/resources/data/lavender-town-music.wav");
+        //InputStream in = getClass().getResourceAsStream("data/lavender-town-music.wav");
+
+        InputStream audioFile = new BufferedInputStream(GameMusic.class.getClassLoader().getResourceAsStream("data/lavender-town-music.wav"));
 
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
 
@@ -21,12 +28,14 @@ public class GameMusic {
         gainControl.setValue(-30.0f);
     }
 
-    public void playMusic() {
+    public static void playMusic() {
         audioClip.start();
         audioClip.loop(audioClip.LOOP_CONTINUOUSLY);
     }
 
-    public void stopMusic() {
+    public static void stopMusic() {
         audioClip.stop();
     }
+
+
 }
