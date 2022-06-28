@@ -23,6 +23,12 @@ public class Battle {
     public void start() {
        while(combat && player.getHitPoints() > 0 && npc.getHitPoints() > 0) {
            // displayInventory();
+//           if(npc.getHitPoints()<=0){
+//               npc.giveSpoils();
+//           }
+           /**
+            * the idea is to make sure that the npc class has an item for the character to drop
+            */
            String userCommand = scannerUserInput();
            battleRound(userCommand);
        }
